@@ -1,0 +1,70 @@
+# Files with number 4 are the tested ones
+# Number 5 (only for cmbmain equations and modules) test the isw only
+# Number 5 should be fine
+# Number 6 (cmbmain modules) isw-isw added
+
+
+#CAMB Makefile
+#Edit for your compiler
+#Note there are many ifc versions, some of which behave oddly
+
+#Intel 8 , -openmp toggles mutli-processor:
+F90C          = gfortran
+FFLAGS        = -O3 -fopenmp -m64 -ffree-line-length-none 
+#$(CHECKFLAGS)
+CHECKFLAGS    = -fbounds-check -g -fbacktrace 
+#-fugly-logint
+
+EQUATIONS     = equations5
+POWERSPECTRUM = power_tilt
+#Module doing non-linear scaling
+NONLINEAR     = halofit
+
+#Driver program
+DRIVER        = inidriver4.F90
+#DRIVER        = sigma8.f90
+#DRIVER        = tester.f90
+
+#Settings for building camb_fits
+#Location of FITSIO and name of library
+#FITSDIR       = /Users/dpietrob/work/cmbcodes/cfitsio
+FITSDIR       = /Users/dpietrob/work/cmbcodes/mylib/cfitsio
+FITSLIB       = cfitsio
+#Location of HEALPIX for building camb_fits
+HEALPIXDIR    = /Users/dpietrob/work/cmbcodes/Healpix_2.13a
+
+CAMBLIB       = ../libcamb.a
+CAMBNAME      = ../sos_thres_my_camb_ISW
+
+#Shouldn't need to change anything else...
+
+F90FLAGS      = $(FFLAGS)
+HEALPIXLD     = -L$(HEALPIXDIR)/lib_gfortran -lhealpix -L$(FITSDIR) -l$(FITSLIB)
+
+CAMBOBJ       = subroutines.o inifile.o $(POWERSPECTRUM).o recfast.o modules6.o \
+	bessels.o mysub.o $(EQUATIONS).o $(NONLINEAR).o lensing.o cmbmain6.o camb4.o 
+
+default: camb
+
+all: camb $(CAMBLIB)
+
+camb: $(CAMBOBJ) $(DRIVER)
+	$(F90C) $(F90FLAGS) $(CAMBOBJ) $(DRIVER) -o $(CAMBNAME)
+
+$(CAMBLIB): $(CAMBOBJ)
+	ar -r $@ $?
+
+camb_fits: writefits.f90 $(CAMBOBJ) $(DRIVER)
+	$(F90C) $(F90FLAGS) -I$(HEALPIXDIR)/include_gfortran $(CAMBOBJ) writefits.f90 $(DRIVER) $(HEALPIXLD) -DWRITE_FITS -o $@
+
+%.o: %.f90
+	$(F90C) $(F90FLAGS) -c $*.f90
+
+%.o: %.F90
+	$(F90C) $(F90FLAGS) -c $*.F90
+
+clean:
+	-rm -f *.o *.a *.d core *.mod
+
+tidy:
+	-rm -f *.o *.a *.d core *.mod $(CAMBNAME) $(CAMBLIB)

@@ -1,0 +1,124 @@
+113a114,115
+>           elseif (w_lam == -1._dl) then
+>              grhoa2=grhoa2+grhov*a2**2
+115,116c117
+<              IF (w_lam == -1.) grhoa2=grhoa2+grhov*a2**2
+<              IF (w_lam /= -1.) grhoa2=grhoa2+grhov*a**(1-3*w_lam)
+---
+>              grhoa2=grhoa2+grhov*a**(1-3*w_lam)
+741c742
+<         if (CP%do_affine_eos == .false.) grhov_t = grhov*a**(-1-3*w_lam)
+---
+>         if (CP%do_affine_eos ==.false.) grhov_t = grhov*a**(-1-3*w_lam)
+1084c1085
+<            initv(1,i_clxc) = initv(1,i_clxb)
+---
+>            initv(1,i_clxc)=initv(1,i_clxb)
+1087c1088
+<         IF (CP%do_affine_eos) initv(1,i_clxq) = ( 1.+w_de(a) ) * initv(1,i_clxb)
+---
+>         initv(1,i_clxq) = ( 1.+w_de(a) ) * initv(1,i_clxb)
+1370,1372d1370
+< ! ------ :D
+<          use ModelParams
+< ! ---
+1380,1382d1377
+< ! ------ :D
+<          real(dl) clxq
+< ! ---
+1391,1394c1386
+< ! ------ :D
+<          clxq = y(EV%w_ix)
+< ! ---
+< 
+---
+>  
+1413,1444c1405,1408
+< !       grho =  grho+(grhoc+grhob)/a + grhov*a**(-1-3*w_lam)
+< 
+< ! ------ :D
+< ! From latest version of cosmomc (March 08)
+< !!$         dgrho = dgrho + y(EV%w_ix)*grhov*a**(-1-3*w_de(a))
+< !!$         grho =  grho+(grhoc+grhob)/a + grhov*a**(-1-3*w_lam)
+< !       Arr(Transfer_r) = y(EV%w_ix)/k2
+< ! ---  
+< 
+< !!$         dgrho = dgrho+(clxc*grhoc + clxb*grhob)/a 
+< !!$         grho =  grho+(grhoc+grhob)/a
+< 
+< ! In order to take into account affine fluid perturbations
+< ! remember that the cosmological constant translates into
+< ! a different normalization of the power spectrum, and sigma8
+<          IF (CP%do_affine_eos) THEN 
+< ! dgrho is the density fluctuation
+<                dgrho = dgrho+(clxc*grhoc + clxb*grhob)/a + &
+<                     clxq*grhode(a)*a**2    
+< !!$            IF (CP%omegac == 0.) THEN
+<                grho =  grho+(grhoc+grhob)/a + grhomdf*a**(-1-3*CP%alpha)!grhode(a)*a**2
+< ! Unfortunately introducing the late time acceleration due to DE
+< !  changes sigma8 unrealistically
+< !!$            ELSE
+< !!$               dgrho = dgrho+(clxc*grhoc + clxb*grhob)/a + &
+< !!$                    clxq*grhode(a)*a**2    
+< !!$               grho =  grho+(grhoc+grhob)/a + grhode(a)*a**2
+< !!$            ENDIF
+<          ELSE
+<             dgrho = dgrho+(clxc*grhoc + clxb*grhob)/a 
+<             grho =  grho+(grhoc+grhob)/a! + grhov*a**(-1-3*w_lam)
+<          ENDIF
+---
+>   
+>          dgrho = dgrho+(clxc*grhoc + clxb*grhob)/a 
+>          grho =  grho+(grhoc+grhob)/a
+>         
+1478c1442
+< !!$         real(dl) cad2
+---
+>          real(dl) cad2
+1508d1471
+< !!$         WRITE(*,*) "equations.f90, fderivs; w_lam = ", w_lam
+1510a1474,1475
+>          elseif (w_lam==-1._dl) then
+>             grhov_t=grhov*a2
+1512,1513c1477
+<             if (w_lam == -1._dl) grhov_t = grhov*a2
+<             if (w_lam /= -1._dl) grhov_t = grhov*a**(-1-3*w_lam)
+---
+>             grhov_t=grhov*a**(-1-3*w_lam)
+1518,1519c1482
+<             clxg=2*(grhoc_t*clxc+grhob_t*clxb)/3/k**2
+<             qg= clxg*k/sqrt((grhoc_t+grhob_t)/3)*(2/3._dl)
+---
+> !            clxg=2*(grhoc_t*clxc+grhob_t*clxb)/3/k**2
+1521,1526c1484,1490
+<             IF (CP%do_affine_eos) THEN 
+<                clxq = ay(EV%w_ix)
+<                clxg=2*(grhov_t*clxq+grhoc_t*clxc+grhob_t*clxb)/3/k**2
+<                clxr=clxg
+<                qg= clxg*k/sqrt((grhov_t+grhoc_t+grhob_t)/3)*(2/3._dl)
+<             ENDIF
+---
+>             clxq = ay(EV%w_ix)
+>             clxg=2*(grhov_t*clxq+grhoc_t*clxc+grhob_t*clxb)/3/k**2
+> ! ---
+>             clxr=clxg
+> !            qg= clxg*k/sqrt((grhoc_t+grhob_t)/3)*(2/3._dl)
+> ! ------ :D
+>             qg= clxg*k/sqrt((grhov_t+grhoc_t+grhob_t)/3)*(2/3._dl)
+1604d1567
+< !!$            WRITE(*,*) "equations.f90, fderivs; delta, v DE ",ayprime(EV%w_ix),ayprime(EV%w_ix)
+2082c2045
+<         grhoc_t=grhoc/a !!$ ???
+---
+>         grhoc_t=grhoc/a
+2279,2284d2241
+<          IF (CP%do_affine_eos) THEN
+<             clxq = ay(EV%w_ix)
+<             clxg=2*(grhov_t*clxq+grhoc_t*clxc+grhob_t*clxb)/3/k**2
+<             clxr=clxg
+<             qg= clxg*k/sqrt((grhov_t+grhoc_t+grhob_t)/3)*(2/3._dl)
+<          ENDIF
+2341c2298
+<         if (CP%do_affine_eos) then
+---
+>         if (w_lam /= -1 .and. w_Perturb .and. CP%do_affine_eos==.false.) then

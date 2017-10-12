@@ -1,0 +1,58 @@
+equations.f90:19:         real(dl)  :: w_lam = -1 !p/rho for the dark energy (assumed constant)
+equations.f90:106:!         if (w_lam == -1._dl) then
+equations.f90:109:!           grhoa2=grhoa2+grhov*a**(1-3*w_lam)
+equations.f90:114:          elseif (w_lam == -1._dl) then
+equations.f90:117:             grhoa2=grhoa2+grhov*a**(1-3*w_lam)
+equations.f90:322:                 if ( (w_lam /= -1 .and. w_Perturb) .or. CP%do_affine_eos) then
+equations.f90:419:!         if (w_lam /= -1 .and. w_Perturb) then
+equations.f90:423:              if ( (w_lam /= -1 .and. w_Perturb) .or. CP%do_affine_eos) then
+equations.f90:740:!        grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:742:        if (CP%do_affine_eos ==.false.) grhov_t = grhov*a**(-1-3*w_lam)
+equations.f90:774:!        gpres=(grhog_t+grhor_t)/3+grhov_t*w_lam
+equations.f90:776:        if (CP%do_affine_eos ==.false.) gpres=(grhog_t+grhor_t)/3+grhov_t*w_lam
+equations.f90:797:        if (w_lam /= -1 .and. w_Perturb .and. CP%do_affine_eos==.false.) then
+equations.f90:801:           dgq = dgq + vq*grhov_t*(1+w_lam)
+equations.f90:1178:        if (w_lam /= -1 .and. w_Perturb .or. CP%do_affine_eos) then
+equations.f90:1404:!       dgrho=dgrho+y(EV%w_ix)*grhov*a**(-1-3*w_lam)
+equations.f90:1405:!       grho =  grho+(grhoc+grhob)/a + grhov*a**(-1-3*w_lam)
+equations.f90:1410:!!$         grho =  grho+(grhoc+grhob)/a + grhov*a**(-1-3*w_lam)
+equations.f90:1426:            grho =  grho+(grhoc+grhob)/a + grhov*a**(-1-3*w_lam)
+equations.f90:1485:!        if (w_lam==-1._dl) then
+equations.f90:1488:!         grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:1493:         elseif (w_lam==-1._dl) then
+equations.f90:1496:            grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:1556:         if (w_lam /= -1 .and. w_Perturb .and. CP%do_affine_eos == .false.) then
+equations.f90:1560:            dgq = dgq + vq*grhov_t*(1+w_lam)
+equations.f90:1577:         if (w_lam /= -1 .and. w_Perturb .and. CP%do_affine_eos==.false.) then
+equations.f90:1578:!           ayprime(EV%w_ix)= -3*adotoa*(cs2_lam-w_lam)*(clxq+3*adotoa*(1+w_lam)*vq/k) &
+equations.f90:1579:!               -(1+w_lam)*k*vq -(1+w_lam)*k*z
+equations.f90:1581:!           ayprime(EV%w_ix+1) = -adotoa*(1-3*cs2_lam)*vq + k*cs2_lam*clxq/(1+w_lam)
+equations.f90:1583:            ayprime(EV%w_ix)= -3*adotoa*(cs2_lam-w_lam)*(clxq+3*adotoa*(1+w_lam)*vq/k) &
+equations.f90:1584:                 -(1+w_lam)*k*vq -(1+w_lam)*k*z
+equations.f90:1586:            ayprime(EV%w_ix+1) = -adotoa*(1-3*cs2_lam)*vq + k*cs2_lam*clxq/(1+w_lam)
+equations.f90:1633:!             gpres=gpres+ (grhog_t+grhor_t)/3 +grhov_t*w_lam
+equations.f90:1635:            if (CP%do_affine_eos == .false.) gpres=gpres+ (grhog_t+grhor_t)/3 +grhov_t*w_lam
+equations.f90:1869:!        grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:1871:        if (CP%do_affine_eos ==.false.) grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:2067:!        grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:2069:        if (CP%do_affine_eos ==.false.) grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:2073:!        gpres=(grhog_t+grhor_t)/3._dl+grhov_t*w_lam
+equations.f90:2075:        if (CP%do_affine_eos ==.false.) gpres=(grhog_t+grhor_t)/3._dl+grhov_t*w_lam
+equations.f90:2251:!        grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:2253:        if (CP%do_affine_eos ==.false.) grhov_t = grhov*a**(-1-3*w_lam)
+equations.f90:2310:        if (w_lam /= -1 .and. w_Perturb .and. CP%do_affine_eos==.false.) then
+equations.f90:2314:           dgq = dgq + vq*grhov_t*(1+w_lam)
+equations.f90:2317:        if (w_lam /= -1 .and. w_Perturb .and. CP%do_affine_eos==.false.) then
+equations.f90:2330:        if (w_lam /= -1.and. w_Perturb .and. CP%do_affine_eos==.false.) then
+equations.f90:2331:!           ayprime(EV%w_ix)= -3*adotoa*(cs2_lam-w_lam)*(clxq+3*adotoa*(1+w_lam)*vq/k) &
+equations.f90:2332:!               -(1+w_lam)*k*vq -(1+w_lam)*k*z
+equations.f90:2333:!           ayprime(EV%w_ix+1) = -adotoa*(1-3*cs2_lam)*vq + k*cs2_lam*clxq/(1+w_lam)
+equations.f90:2335:           ayprime(EV%w_ix)= -3*adotoa*(cs2_lam-w_lam)*(clxq+3*adotoa*(1+w_lam)*vq/k) &
+equations.f90:2336:                -(1+w_lam)*k*vq -(1+w_lam)*k*z
+equations.f90:2337:           ayprime(EV%w_ix+1) = -adotoa*(1-3*cs2_lam)*vq + k*cs2_lam*clxq/(1+w_lam)
+equations.f90:2383:!            gpres=gpres+ (grhog_t+grhor_t)/3 +grhov_t*w_lam
+equations.f90:2385:            if (CP%do_affine_eos ==.false.) gpres=gpres+ (grhog_t+grhor_t)/3 +grhov_t*w_lam
+equations.f90:2639:!        grhov_t=grhov*a**(-1-3*w_lam)
+equations.f90:2641:        if (CP%do_affine_eos == .false.) grhov_t=grhov*a**(-1-3*w_lam)
+inidriver.F90:101:       w_lam = Ini_Read_Double('w', -1.d0)
+inidriver.F90:109:       if (P%do_barotropic_sos .and. P%do_affine_eos==.false.) cs2_lam = w_lam

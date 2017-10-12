@@ -1,0 +1,85 @@
+GFORTRAN module created from power_tilt.f90 on Wed Aug 11 00:10:21 2010
+MD5:73042b9250e200b45d06a5fd29c1cf84 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () () () () () () ()
+() () () ())
+
+()
+
+()
+
+()
+
+()
+
+(2 'initializepowers' 'initialpower' 'initializepowers' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN SUBROUTINE) (UNKNOWN 0 0 0
+UNKNOWN ()) 3 0 (4 5) () 0 () () 0 0)
+6 'initialpowerparams' 'initialpower' 'initialpowerparams' 1 ((DERIVED
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN) (UNKNOWN 0 0 0 UNKNOWN ())
+0 0 () () 0 ((7 'nn' (INTEGER 4 0 0 INTEGER ()) () 0 0 0 UNKNOWN-ACCESS
+()) (8 'an' (REAL 8 0 0 REAL ()) (1 EXPLICIT (CONSTANT (INTEGER 4 0 0
+INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '5')) 1 0 0
+UNKNOWN-ACCESS ()) (9 'n_run' (REAL 8 0 0 REAL ()) (1 EXPLICIT (
+CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0
+INTEGER ()) 0 '5')) 1 0 0 UNKNOWN-ACCESS ()) (10 'ant' (REAL 8 0 0 REAL
+()) (1 EXPLICIT (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1') (CONSTANT (
+INTEGER 4 0 0 INTEGER ()) 0 '5')) 1 0 0 UNKNOWN-ACCESS ()) (11 'rat' (
+REAL 8 0 0 REAL ()) (1 EXPLICIT (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1')
+(CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '5')) 1 0 0 UNKNOWN-ACCESS ()) (
+12 'k_0_scalar' (REAL 8 0 0 REAL ()) () 0 0 0 UNKNOWN-ACCESS ()) (13
+'k_0_tensor' (REAL 8 0 0 REAL ()) () 0 0 0 UNKNOWN-ACCESS ()) (14
+'scalarpoweramp' (REAL 8 0 0 REAL ()) (1 EXPLICIT (CONSTANT (INTEGER 4 0
+0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '5')) 1 0 0
+UNKNOWN-ACCESS ())) PUBLIC () 0 0)
+15 'nnmax' 'initialpower' 'nnmax' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE) (INTEGER 4 0 0 INTEGER ()) 0 0 () (
+CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '5') () 0 () () 0 0)
+16 'power_descript' 'initialpower' 'power_descript' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN FUNCTION) (INTEGER 4 0 0 INTEGER
+()) 17 0 (18 19 20 21 22) () 16 () () 0 0)
+23 'power_name' 'initialpower' 'power_name' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE) (CHARACTER 1 0 0 CHARACTER ((
+CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '10'))) 0 0 () (CONSTANT (
+CHARACTER 1 0 0 CHARACTER (())) 0 10 'power_tilt') () 0 () () 0 0)
+24 'scalarpower' 'initialpower' 'scalarpower' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN FUNCTION) (REAL 8 0 0 REAL ())
+25 0 (26 27) () 24 () () 0 0)
+28 'setdefpowerparams' 'initialpower' 'setdefpowerparams' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN SUBROUTINE) (UNKNOWN 0 0 0
+UNKNOWN ()) 29 0 (30) () 0 () () 0 0)
+31 'tensorpower' 'initialpower' 'tensorpower' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN FUNCTION) (REAL 8 0 0 REAL ())
+32 0 (33 34) () 31 () () 0 0)
+30 'ap' '' 'ap' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () () 0 () () 0 0)
+4 'aparamset' '' 'aparamset' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN DUMMY) (DERIVED 6 0 0 DERIVED ()) 0 0 () () 0 () () 0 0)
+5 'acurv' '' 'acurv' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN DUMMY) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () 0 0)
+26 'k' '' 'k' 25 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+DUMMY) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () 0 0)
+27 'in' '' 'in' 25 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN DUMMY) (INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () () 0 0)
+33 'k' '' 'k' 32 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+DUMMY) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () 0 0)
+34 'in' '' 'in' 32 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN DUMMY) (INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () () 0 0)
+18 'in' '' 'in' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN DUMMY) (
+INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () () 0 0)
+19 'scal' '' 'scal' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN DUMMY)
+(LOGICAL 4 0 0 LOGICAL ()) 0 0 () () 0 () () 0 0)
+20 'tens' '' 'tens' 17 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN DUMMY)
+(LOGICAL 4 0 0 LOGICAL ()) 0 0 () () 0 () () 0 0)
+21 'keys' '' 'keys' 17 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN
+DIMENSION DUMMY) (CHARACTER 1 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0
+INTEGER ()) 0 '8'))) 0 0 () (1 ASSUMED_SIZE (CONSTANT (INTEGER 4 0 0
+INTEGER ()) 0 '1') ()) 0 () () 0 0)
+22 'vals' '' 'vals' 17 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN
+DIMENSION DUMMY) (REAL 8 0 0 REAL ()) 0 0 () (1 ASSUMED_SIZE (CONSTANT (
+INTEGER 4 0 0 INTEGER ()) 0 '1') ()) 0 () () 0 0)
+)
+
+('initializepowers' 0 2 'initialpowerparams' 0 6 'nnmax' 0 15
+'power_descript' 0 16 'power_name' 0 23 'scalarpower' 0 24
+'setdefpowerparams' 0 28 'tensorpower' 0 31)
